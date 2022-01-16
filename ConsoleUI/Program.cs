@@ -12,12 +12,11 @@ namespace ConsoleUI
         static void Main(string[] args)
         {
             //CarTest();
-            BrandTest();
+            //BrandTest();
             //ColorTest();
             //UserTest();
             //CustomerTest();
-            //RentalTest();
-
+            RentalTest();
         }
 
         private static void RentalTest()
@@ -28,7 +27,7 @@ namespace ConsoleUI
             {
                 foreach (var rental in result.Data)
                 {
-                    Console.WriteLine(rental.CustomerId);
+                    Console.WriteLine(rental.ReturnDate);
                 }
             }
         }
@@ -108,31 +107,32 @@ namespace ConsoleUI
         private static void CarTest()
         {
             CarManager carManager = new CarManager(new EfCarDal());
-            var result = carManager.GetCarDetails();
-            if (result.Success == true)
-            {
-                foreach (var car in result.Data)
-                {
-                    Console.WriteLine(car.BrandName + " / " + car.DailyPrice);
-                }
-            }
-            else
-            {
-                Console.WriteLine(result.Message);
-            }
 
-            //var result = carManager.GetAll();
+            //var result = carManager.GetCarDetails();
             //if (result.Success == true)
             //{
             //    foreach (var car in result.Data)
             //    {
-            //        Console.WriteLine(car.Description);
+            //        Console.WriteLine(car.BrandName + " / " + car.DailyPrice);
             //    }
             //}
             //else
             //{
             //    Console.WriteLine(result.Message);
             //}
+
+            var result = carManager.GetByDailyPrice(100,250);
+            if (result.Success == true)
+            {
+                foreach (var car in result.Data)
+                {
+                    Console.WriteLine(car.Description);
+                }
+            }
+            else
+            {
+                Console.WriteLine(result.Message);
+            }
         }
     }
 }
