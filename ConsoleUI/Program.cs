@@ -101,7 +101,6 @@ namespace ConsoleUI
                 BrandId = 6,
                 BrandName = "HONDA"
             });
-
         }
 
         private static void CarTest()
