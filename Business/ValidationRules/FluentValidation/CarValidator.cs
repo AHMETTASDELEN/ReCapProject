@@ -6,11 +6,11 @@ using System.Text;
 
 namespace Business.ValidationRules.FluentValidation
 {
-    public class CarValidator:AbstractValidator<Car>
+    public class CarValidator : AbstractValidator<Car>
     {
         public CarValidator()
         {
-            RuleFor(c=>c.Description).MinimumLength(2);
+            RuleFor(c => c.Description).MinimumLength(2);
             RuleFor(c => c.DailyPrice).GreaterThan(0);
 
             RuleFor(c => c.DailyPrice).NotEmpty();
@@ -20,4 +20,4 @@ namespace Business.ValidationRules.FluentValidation
             RuleFor(c => c.ColorId).NotEmpty();
         }
     }
-} 
+}
