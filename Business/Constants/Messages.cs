@@ -1,6 +1,7 @@
 ﻿using Entities.Concrete;
 using System;
 using System.Collections.Generic;
+using System.Runtime.Serialization;
 using System.Text;
 
 namespace Business.Constants
@@ -53,5 +54,11 @@ namespace Business.Constants
         public static string RentalsListed = "Kiralamalar Listelendi";
         public static string RentalNotReturn = "Araç Teslim Edilmemiş";
 
+        //CarImage 
+        public static string CarImageAdded = "Araba resmi eklendi";
+        public static string CarImageDeleted = "Araba resmi silindi";
+        public static string CarImageUpdated = "Araba resmi güncellendi";
+        public static string CarImagesListed = "Araba resimleri listelendi";
+        public static string AuthorizationDenied = "Yetkiniz Yok";
     }
 }
